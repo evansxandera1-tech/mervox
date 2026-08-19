@@ -1,0 +1,90 @@
+name: mervox-pipeline
+
+on:
+  repository_dispatch:
+    types: [grabar]
+  workflow_dispatch:
+    inputs:
+      usuario_tiktok:
+        description: "Username de TikTok a grabar (sin @)"
+        required: true
+
+jobs:
+  procesar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Instalar dependencias Python
+        run: pip install -r requirements.txt
+
+      - name: Clonar tiktok-live-recorder
+        run: git clone https://github.com/Michele0303/tiktok-live-recorder.git recorder
+
+      - name: Instalar dependencias del recorder
+        run: pip install -r recorder/requirements.txt || true
+
+      - name: Definir usuario objetivo
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "usuario=${{ github.event.client_payload.usuario_tiktok }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "usuario=${{ github.event.inputs.usuario_tiktok }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Grabar live (max 2 horas)
+        run: |
+          cd recorder
+          python src/main.py -mode manual -user "${{ steps.vars.outputs.usuario }}" \
+            -duration 7200 -output ../grabaciones -no-update-check
+
+      - name: Avisar por Telegram - grabacion terminada
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notificar_telegram.py "Grabacion de ${{ steps.vars.outputs.usuario }} terminada. Procesando clips..."
+
+      - name: Segmentar con Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/segmentar.py --input_dir grabaciones --output momentos.json
+
+      - name: Generar clips
+        run: python scripts/clips.py --input_dir grabaciones --momentos momentos.json --output_dir clips_finales
+
+      - name: Subir clips a Google Drive
+        env:
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+        run: python scripts/subir_drive.py --input_dir clips_finales
+
+      - name: Avisar por Telegram - clips listos
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notificar_telegram.py "Clips de ${{ steps.vars.outputs.usuario }} listos y subidos a Drive."
+
+      - name: Actualizar estado.json
+        run: |
+          python scripts/actualizar_estado.py --usuario "${{ steps.vars.outputs.usuario }}" \
+            --clips_dir clips_finales --estado ok --mensaje "Corrida completa"
+
+      - name: Guardar estado.json en el repo
+        run: |
+          git config user.name "mervox-bot"
+          git config user.email "mervox-bot@users.noreply.github.com"
+          git add estado.json
+          git commit -m "Actualiza estado.json" || echo "Sin cambios"
+          git push
