@@ -1,0 +1,95 @@
+name: mervox
+
+on:
+  workflow_dispatch:
+    inputs:
+      usuario:
+        description: "Usuario de TikTok a grabar"
+        required: true
+  repository_dispatch:
+    types: [grabar]
+
+jobs:
+  procesar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Definir usuario a grabar
+        id: datos
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "usuario=${{ github.event.client_payload.usuario }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "usuario=${{ github.event.inputs.usuario }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Clonar tiktok-live-recorder
+        run: git clone https://github.com/Michele0303/tiktok-live-recorder.git recorder
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt --break-system-packages
+          pip install -r recorder/requirements.txt --break-system-packages
+
+      - name: Crear cookies.json del recorder
+        run: |
+          echo "{\"sessionid_ss\": \"${{ secrets.TIKTOK_SESSIONID_SS }}\"}" > recorder/cookies.json
+
+      - name: Crear service_account.json de Drive
+        run: |
+          echo '${{ secrets.GDRIVE_CREDENTIALS_JSON }}' > service_account.json
+
+      - name: Avisar inicio por Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notificar_telegram.py "mervox: arrancando grabacion de ${{ steps.datos.outputs.usuario }}"
+
+      - name: Grabar live
+        working-directory: recorder/src
+        run: |
+          mkdir -p ../../grabacion
+          python main.py -user "${{ steps.datos.outputs.usuario }}" -mode automatic -duration 7200 -output ../../grabacion
+
+      - name: Avisar fin de grabacion
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notificar_telegram.py "mervox: grabacion terminada, procesando clips..."
+
+      - name: Segmentar (whisper + Gemini)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/segmentar.py
+
+      - name: Generar clips
+        run: python scripts/clips.py
+
+      - name: Subir a Drive
+        env:
+          GDRIVE_CREDENTIALS_PATH: service_account.json
+        run: python scripts/subir_drive.py
+
+      - name: Avisar clips listos
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/notificar_telegram.py "mervox: clips listos y subidos a Drive/mervox"
+
+      - name: Subir log como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mervox-log
+          path: mervox.log

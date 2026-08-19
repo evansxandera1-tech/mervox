@@ -1,0 +1,1 @@
+/data/data/com.termux/files/home/transcribir_web_v2-7.py

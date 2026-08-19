@@ -1,0 +1,74 @@
+
+======================================================================
+TOPIC: The paranormal (Creepy Threads) (id 16506)
+URL: https://www.mumsnet.com/api/v3/talk/topics/16506/threads
+======================================================================
+Status: 200
+Hilos recibidos: 25
+
+  - "Have tarot readings matched your experiences, and were the predictions accurate?"
+    palabras en el cuerpo: 157  |  respuestas: 2
+
+  - "Coincidence or something more after drinking my late neighbour's wine?"
+    palabras en el cuerpo: 309  |  respuestas: 19
+
+  - "Has anyone actually seen a ghost"
+    palabras en el cuerpo: 71  |  respuestas: 347
+
+  - "I’m not generally a believer in all things ‘woo’"
+    palabras en el cuerpo: 68  |  respuestas: 4
+
+  - "Tarot cards"
+    palabras en el cuerpo: 13  |  respuestas: 8
+
+  - "Anyone want a tarot reading?"
+    palabras en el cuerpo: 26  |  respuestas: 82
+
+  - "What’s this in the sky?"
+    palabras en el cuerpo: 87  |  respuestas: 7
+
+  - "Heard footsteps in our old cottage while home alone"
+    palabras en el cuerpo: 261  |  respuestas: 19
+
+  - "Beginner tarot recommendation"
+    palabras en el cuerpo: 22  |  respuestas: 8
+
+  - "What do you think of tarot readings and psychic mediums?"
+    palabras en el cuerpo: 139  |  respuestas: 256
+
+======================================================================
+TOPIC: True crime and unsolved mysteries (bonus) (id 16646)
+URL: https://www.mumsnet.com/api/v3/talk/topics/16646/threads
+======================================================================
+Status: 200
+Hilos recibidos: 25
+
+  - "TW: The Lindsay Clancy trial and the debate over postnatal psychosis"
+    palabras en el cuerpo: 286  |  respuestas: 3
+
+  - "Hungerford massacre"
+    palabras en el cuerpo: 127  |  respuestas: 12
+
+  - "Robbery ... with kitten"
+    palabras en el cuerpo: 83  |  respuestas: 0
+
+  - "I need some podcast recommendations!!"
+    palabras en el cuerpo: 155  |  respuestas: 6
+
+  - "What was the mushroom murderer’s endgame?"
+    palabras en el cuerpo: 117  |  respuestas: 43
+
+  - "Alec Murdaugh to get a new trial!"
+    palabras en el cuerpo: 59  |  respuestas: 3
+
+  - "Lisa Wiese missing since 2019 - tied to UK cult"
+    palabras en el cuerpo: 939  |  respuestas: 2
+
+  - "True Crime Books"
+    palabras en el cuerpo: 27  |  respuestas: 0
+
+  - "Has anyone watched the Casey Anthony documentary on Crime and Investigation?"
+    palabras en el cuerpo: 36  |  respuestas: 0
+
+  - "Anyone recommend some good true crime youtube videos for late night viewing?"
+    palabras en el cuerpo: 26  |  respuestas: 7

@@ -1,0 +1,437 @@
+Probando 22 combinaciones...
+
+[  404] subjects/spooky-paranormal/threads  ->  https://www.mumsnet.com/api/v3/discover/subjects/spooky-paranormal/threads
+[  404] subjects/spooky_paranormal/threads  ->  https://www.mumsnet.com/api/v3/discover/subjects/spooky_paranormal/threads
+[  404] subjects/spooky/threads  ->  https://www.mumsnet.com/api/v3/discover/subjects/spooky/threads
+[  404] subjects/paranormal/threads  ->  https://www.mumsnet.com/api/v3/discover/subjects/paranormal/threads
+[  404] subjects/spooky-paranormal (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/subjects/spooky-paranormal
+[  404] subjects/spooky_paranormal (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/subjects/spooky_paranormal
+[  404] subjects/spooky (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/subjects/spooky
+[  404] subjects/paranormal (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/subjects/paranormal
+[  404] categories/spooky-paranormal/threads  ->  https://www.mumsnet.com/api/v3/discover/categories/spooky-paranormal/threads
+[  404] categories/spooky_paranormal/threads  ->  https://www.mumsnet.com/api/v3/discover/categories/spooky_paranormal/threads
+[  404] categories/spooky/threads  ->  https://www.mumsnet.com/api/v3/discover/categories/spooky/threads
+[  404] categories/paranormal/threads  ->  https://www.mumsnet.com/api/v3/discover/categories/paranormal/threads
+[  404] categories/spooky-paranormal (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/categories/spooky-paranormal
+[  404] categories/spooky_paranormal (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/categories/spooky_paranormal
+[  404] categories/spooky (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/categories/spooky
+[  404] categories/paranormal (sin /threads)  ->  https://www.mumsnet.com/api/v3/discover/categories/paranormal
+[  404] discover (base)  ->  https://www.mumsnet.com/api/v3/discover
+[  404] discover/subjects (índice)  ->  https://www.mumsnet.com/api/v3/discover/subjects
+[  404] discover/categories (índice)  ->  https://www.mumsnet.com/api/v3/discover/categories
+[   OK] talk/topics (índice)  ->  https://www.mumsnet.com/api/v3/talk/topics
+[   OK] feeds/trending  ->  https://www.mumsnet.com/api/v3/feeds/trending
+[   OK] CONTROL: AIBU por ID 2724 (ya confirmado que funciona)  ->  https://www.mumsnet.com/api/v3/talk/topics/2724/threads
+
+======================================================================
+RESUMEN — solo las que dieron status 200:
+======================================================================
+
+>>> talk/topics (índice)
+    URL: https://www.mumsnet.com/api/v3/talk/topics
+    ¿Tiene datos reales?: SI
+    Preview: {"data": [{"id": 16444, "name": "30 days only", "slug": "thirty_days_only", "link": "https://www.mumsnet.com/talk/thirty_days_only", "category_id": 9, "is_category_favourite": false, "is_excluded_from_search_engines": true, "is_geolocatable": false, "is_pollable": true, "default_poll_template_id": 2
+
+>>> feeds/trending
+    URL: https://www.mumsnet.com/api/v3/feeds/trending
+    ¿Tiene datos reales?: SI
+    Preview: {"data": [{"id": 5564143, "group_id": null, "post_type": "thread", "subject": "AIBU to refuse to cut short our holiday for childcare?", "username": "UnhealthierWhy", "body": "<p>This is not our problem ???</p>\n<p>We are on holiday currently with our 2 dc (2 and 4) (Disney Paris) due back home on We
+
+>>> CONTROL: AIBU por ID 2724 (ya confirmado que funciona)
+    URL: https://www.mumsnet.com/api/v3/talk/topics/2724/threads
+    ¿Tiene datos reales?: SI
+    Preview: {"data": [{"id": 5564162, "group_id": null, "post_type": "thread", "subject": "Has anyone else seen the \"Butt Face Chester Cheeks\" toy at Smyths? Surely this isn't right for 4-year-olds?!", "username": "PaperClips007", "body": "<p>Hi everyone,<br>\nI recently saw an Instagram clip talking about a 
+
+======================================================================
+DETALLE COMPLETO de cada respuesta 200 (JSON entero):
+======================================================================
+
+----- talk/topics (índice) -----
+URL: https://www.mumsnet.com/api/v3/talk/topics
+{
+  "data": [
+    {
+      "id": 16444,
+      "name": "30 days only",
+      "slug": "thirty_days_only",
+      "link": "https://www.mumsnet.com/talk/thirty_days_only",
+      "category_id": 9,
+      "is_category_favourite": false,
+      "is_excluded_from_search_engines": true,
+      "is_geolocatable": false,
+      "is_pollable": true,
+      "default_poll_template_id": 2,
+      "available_poll_templates": [
+        {
+          "id": 2,
+          "name": "Custom",
+          "default_title": "",
+          "default_options": [
+            "",
+            "",
+            ""
+          ],
+          "default_duration": 72,
+          "is_immutable": false,
+          "is_aibu": false
+        }
+      ],
+      "add_poll_by_default": false,
+      "is_payable": false,
+      "fee": null,
+      "is_premium": false,
+      "can_view_threads": true,
+      "can_create_thread": false,
+      "is_followed_topic": false,
+      "is_user_topic": false,
+      "popular_topic": null,
+      "new_users_can_not_post_for_x_days": null,
+      "prevent_user_replies": false
+    },
+    {
+      "id": 16590,
+      "name": "90 days only",
+      "slug": "ninety_days_only",
+      "link": "https://www.mumsnet.com/talk/ninety_days_only",
+      "category_id": 9,
+      "is_category_favourite": false,
+      "is_excluded_from_search_engines": true,
+      "is_geolocatable": false,
+      "is_pollable": true,
+      "default_poll_template_id": 2,
+      "available_poll_templates": [
+        {
+          "id": 2,
+          "name": "Custom",
+          "default_title": "",
+          "default_options": [
+            "",
+            "",
+            ""
+          ],
+          "default_duration": 72,
+          "is_immutable": false,
+          "is_aibu": false
+        }
+      ],
+      "add_poll_by_default": false,
+      "is_payable": false,
+      "fee": null,
+      "is_premium": false,
+      "can_view_threads": true,
+      "can_create_thread": false,
+      "is_followed_topic": false,
+      "is_user_topic": false,
+      "popular_topic": null,
+      "new_users_can_not_post_for_x_days": null,
+      "prevent_user_replies": false
+    },
+    {
+      "id": 16549,
+      "name": "Addiction support",
+      "slug": "substance_addiction_",
+      "link": "https://www.mumsnet.com/talk/substance_addiction_",
+      "category_id": 21,
+      "is_category_favourite": false,
+      "is_excluded_from_search_engines": false,
+      "is_geolocatable": false,
+      "is_pollable": true,
+      "default_poll_template_id": 2,
+      "available_poll_templates": [
+        {
+          "id": 2,
+          "name": "Custom",
+          "default_title": "",
+          "default_options": [
+            "",
+            "",
+            ""
+          ],
+          "default_duration": 72,
+          "is_immutable": false,
+          "is_aibu": false
+        }
+      ],
+      "add_poll_by_default": false,
+      "is_payable": false,
+      "fee": null,
+      "is_premium": false,
+      "can_view_threads": true,
+      "can_create_thread": false,
+      "is_followed_topic": false,
+      "is_user_topic": false,
+      "popular_topic": null,
+      "new_users_can_not_post_for_x_days": null,
+      "prevent_user_replies": false
+    },
+    {
+      "id": 2418,
+      "name": "Adoption",
+      "slug": "adoptions",
+      "link": "https://www.mumsnet.com/talk/adoptions",
+      "category_id": 1,
+      "is_category_favourite": false,
+      "is_excluded_from_search_engines": false,
+      "is_geolocatable": false,
+      "is_pollable": true,
+      "default_poll_template_id": 2,
+      "available_poll_templates": [
+        {
+          "id": 2,
+          "name": "Custom",
+          "default_title": "",
+          "default_options": [
+            "",
+            "",
+            ""
+          ],
+          "default_duration": 72,
+          "is_immutable": false,
+          "is_aibu": false
+        }
+      ],
+      "add_poll_by_default": false,
+      "is_payable": false,
+      "fee": null,
+      "is_premium": false,
+      "can_view_threads": true,
+      "can_create_thread": false,
+      "is_followed_topic": false,
+      "is_user_topic": false,
+      "popular_topic": null,
+      "new_users_can_not_post_for_x_days": null,
+      "prevent_user_replies": false
+    },
+    {
+      "id": 2724,
+      "name": "AIBU?",
+      "slug": "am_i_being_unreasonable",
+      "link": "https://www.mumsnet.com/talk/am_i_being_unreasonable",
+      "category_id": 9,
+      "is_category_favourite": true,
+      "is_excluded_from_search_engines": false,
+      "is_geolocatable": false,
+      "is_pollable": true,
+      "default_poll_template_id": 1,
+      "available_poll_templates": [
+        {
+          "id": 1,
+          "name": "AIBU",
+          "default_title": "Am I being unreasonable?",
+          "default_options": [
+            "You are being unreasonable",
+            "You are NOT being unreasonable"
+          ],
+          "default_duration": 72,
+          "is_immutable": true,
+          "is_aibu": true
+        }
+      ],
+      "add_poll_by_default": true,
+      "is_payable": fal
+
+----- feeds/trending -----
+URL: https://www.mumsnet.com/api/v3/feeds/trending
+{
+  "data": [
+    {
+      "id": 5564143,
+      "group_id": null,
+      "post_type": "thread",
+      "subject": "AIBU to refuse to cut short our holiday for childcare?",
+      "username": "UnhealthierWhy",
+      "body": "<p>This is not our problem ???</p>\n<p>We are on holiday currently with our 2 dc (2 and 4) (Disney Paris) due back home on Wednesday. Dh has 2 older dc from previous marriage (6 and 8).</p>\n<p>He gave his ex money for holiday childcare which she ‘forgot’ to book the first week so I had to look after dc which was fine as dh had work. Next week her mum was going to have the dc but is now unwell. She is telling dh he needs to come home early to have the dc as she can’t take the time off.</p>\n<p>She is constantly messaging and calling and we are considering just turning our phones off if she continues pestering us this way.</p>\n<p>This seems to be a regular thing with her not arranging childcare and then expecting us to rescue the situation which we try to accomodate if we can but this is the first time we’ve said no.</p>\n",
+      "created_at": "2026-08-08T11:20:52+00:00",
+      "updated_at": "2026-08-08T15:34:20+00:00",
+      "link": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5564143-aibu-to-refuse-to-cut-short-our-holiday-for-childcare",
+      "replies_count": 227,
+      "sponsor": null,
+      "is_excluded_from_search_engines": false,
+      "topic": {
+        "id": 2724,
+        "name": "AIBU?",
+        "slug": "am_i_being_unreasonable",
+        "link": "https://www.mumsnet.com/talk/am_i_being_unreasonable",
+        "category_id": 9,
+        "is_category_favourite": true,
+        "is_excluded_from_search_engines": false,
+        "is_geolocatable": false,
+        "is_pollable": true,
+        "default_poll_template_id": 1,
+        "add_poll_by_default": true,
+        "is_payable": false,
+        "fee": null,
+        "is_premium": false,
+        "can_view_threads": true,
+        "can_create_thread": false,
+        "is_followed_topic": false,
+        "is_user_topic": false,
+        "popular_topic": null,
+        "new_users_can_not_post_for_x_days": null,
+        "prevent_user_replies": false
+      },
+      "non_safe_images_exists": false,
+      "poll": {
+        "id": 180444,
+        "title": "Am I being unreasonable?",
+        "thread_id": 5564143,
+        "is_author": false,
+        "status": "open",
+        "closes": {
+          "current_date_time_at": "2026-08-08T15:35:30+00:00",
+          "closes_at": "2026-08-11T11:20:52+00:00"
+        },
+        "options": [
+          {
+            "id": 364482,
+            "option": "You are being unreasonable",
+            "vote_count": 65
+          },
+          {
+            "id": 364483,
+            "option": "You are NOT being unreasonable",
+            "vote_count": 1249
+          }
+        ],
+        "currently_voting_for_option_id": null,
+        "total_vote_count": 1314,
+        "is_aibu": true
+      },
+      "is_watching": false,
+      "has_saved": false,
+      "is_hidden": false,
+      "is_author": false,
+      "can_create_reply": false,
+      "can_create_reply_message": null,
+      "is_closed": false,
+      "is_suspended": false,
+      "has_reached_reply_limit": false,
+      "new_users_can_not_post_for_x_days": null,
+      "slug": "5564143-aibu-to-refuse-to-cut-short-our-holiday-for-childcare",
+      "type": "normal",
+      "was_moderated": false,
+      "tags": [
+        {
+          "id": 75888,
+          "provider": "topic",
+          "name": "am_i_being_unreasonable"
+        },
+        {
+          "id": 804,
+          "provider": "gnlp-v2",
+          "name": "/People & Society/Family & Relationships/Family/Other"
+        },
+        {
+          "id": 808,
+          "provider": "gnlp-v2",
+          "name": "/People & Society/Family & Relationships/Troubled Relationships"
+        },
+        {
+          "id": 745,
+          "provider": "gnlp-v2",
+          "name": "/Law & Government/Legal/Family Law"
+        },
+        {
+          "id": 1199,
+          "provider": "tgr",
+          "name": "prnt"
+        }
+      ]
+    },
+    {
+      "id": 5564142,
+      "group_id": null,
+      "post_type": "thread",
+      "subject": "AIBU to ban a guest over dismissing a severe nut allergy?",
+      "username": "bagpuss90",
+      "body": "<p>My sons DP has a severe nut allergy ., she obviously carries an epi pen. I’m hosting a get together tomorrow with friends and family invited . I’m doing most of the cooking but people are bringing drinks. A cpl of people have offered to cook and bring dishes. I’ve said no  it’s fine as then I’ll be sure there are no nuts in anything . I put a msg out in the group chat to remind people to please not bring anything with nuts in just in case . I got a pm this morning from my friends DP saying my sons DP needs to get over it and she would probably have the same reaction if someone threw a spider at her or she walked past a graveyard. It’s a life threatening allergy not a bloody panic attack that she has ffs . I’d love
+
+----- CONTROL: AIBU por ID 2724 (ya confirmado que funciona) -----
+URL: https://www.mumsnet.com/api/v3/talk/topics/2724/threads
+{
+  "data": [
+    {
+      "id": 5564162,
+      "group_id": null,
+      "post_type": "thread",
+      "subject": "Has anyone else seen the \"Butt Face Chester Cheeks\" toy at Smyths? Surely this isn't right for 4-year-olds?!",
+      "username": "PaperClips007",
+      "body": "<p>Hi everyone,<br>\nI recently saw an Instagram clip talking about a controversial new toy, and I honestly couldn't believe it was real. I decided to check my local Smyths to see if it was actually on sale here in the UK, and to my absolute horror, it was right there on the shelves.<br>\nThe toy is called <strong>&quot;Butt Face: Chester Cheeks&quot;</strong> (by Goliath Games) and it is aimed at children aged <strong>4 and up</strong>.<br>\nI’ve added some pictures below, but essentially, it’s a plastic face shaped like a pair of naked buttocks, and the whole premise of the toy involves children squeezing and spreading the cheeks.<br>\nAm I being completely unreasonable, or is this incredibly inappropriate for early years? Children learn through play, and at age 4, they are just starting to grasp vital concepts like body safety, personal boundaries, and consent. Normalising this kind of interaction under the guise of &quot;cheeky humour&quot; feels entirely wrong and confusing for toddlers.<br>\nI know that major Australian retailers like Big W have already pulled this toy from their shelves after a massive backlash from parents and child safety experts, yet Smyths (and a few other UK retailers) are still selling it.<br>\nI've already sent a formal complaint to Smyths customer service asking them to review it. Has anyone else spotted this, or does anyone else feel the same way? If you want to complain too, you can contact them through the <a class=\"break-all\" href=\"https://www.smythstoys.com/uk/en-gb/contact-us\" rel=\"nofollow\" target=\"_blank\">Smyths Toys Support Portal</a>.<br>\nWould love to hear your thoughts.</p>\n",
+      "created_at": "2026-08-08T12:15:56+00:00",
+      "updated_at": "2026-08-08T15:35:20+00:00",
+      "link": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5564162-has-anyone-else-seen-the-butt-face-chester-cheeks-toy-at-smyths-surely-this-isnt-right-for-4-year-olds",
+      "replies_count": 15,
+      "sponsor": null,
+      "is_excluded_from_search_engines": false,
+      "topic": {
+        "id": 2724,
+        "name": "AIBU?",
+        "slug": "am_i_being_unreasonable",
+        "link": "https://www.mumsnet.com/talk/am_i_being_unreasonable",
+        "category_id": 9,
+        "is_category_favourite": true,
+        "is_excluded_from_search_engines": false,
+        "is_geolocatable": false,
+        "is_pollable": true,
+        "default_poll_template_id": 1,
+        "add_poll_by_default": true,
+        "is_payable": false,
+        "fee": null,
+        "is_premium": false,
+        "can_view_threads": true,
+        "can_create_thread": false,
+        "is_followed_topic": false,
+        "is_user_topic": false,
+        "popular_topic": null,
+        "new_users_can_not_post_for_x_days": null,
+        "prevent_user_replies": false
+      },
+      "images": [
+        {
+          "is_sensitive": false,
+          "url": "https://ugc-assets.mumsnet.com/images/202608/TrypomdB35rE8SJikdztMIEOzyvxTTG1PIYM6vMM.png",
+          "width": 530,
+          "height": 707,
+          "size": 541627,
+          "renditions": {
+            "thumbnail": {
+              "url": "https://ugc-assets.mumsnet.com/images/202608/thumbnail-TrypomdB35rE8SJikdztMIEOzyvxTTG1PIYM6vMM.png",
+              "width": 37,
+              "height": 50,
+              "size": 4987
+            },
+            "medium": {
+              "url": "https://ugc-assets.mumsnet.com/images/202608/medium-TrypomdB35rE8SJikdztMIEOzyvxTTG1PIYM6vMM.png",
+              "width": 180,
+              "height": 240,
+              "size": 84254
+            },
+            "large": {
+              "url": "https://ugc-assets.mumsnet.com/images/202608/large-TrypomdB35rE8SJikdztMIEOzyvxTTG1PIYM6vMM.png",
+              "width": 450,
+              "height": 600,
+              "size": 399133
+            }
+          }
+        },
+        {
+          "is_sensitive": false,
+          "url": "https://ugc-assets.mumsnet.com/images/202608/ZwB4b788q6jXILvE9rw5upnUW2ds4puBCaMnM6EV.png",
+          "width": 462,
+          "height": 567,
+          "size": 36281,
+          "renditions": {
+            "thumbnail": {
+              "url": "https://ugc-assets.mumsnet.com/images/202608/thumbnail-ZwB4b788q6jXILvE9rw5upnUW2ds4puBCaMnM6EV.png",
+              "width": 41,
+              "height": 50,
+              "size": 1600
+            },
+            "medium": {
+              "url": "https://ugc-assets.mumsnet.com/images/202608/medium-ZwB4b788q6jXILvE9rw5upnUW2ds4puBCaMnM6EV.png",
+              "width": 196,
+              "height": 240,
+              "size": 15104
+            },
+            "large": {
+              "url": "https://ugc-assets.mumsnet.com/images/202608/large-ZwB4b788q6jXILvE9rw5upnUW2ds4puBCaMnM6EV
