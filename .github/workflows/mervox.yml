@@ -50,6 +50,7 @@ jobs:
 
       - name: Grabar live (max 2 horas)
         run: |
+          mkdir -p grabaciones
           cd recorder
           python src/main.py -mode manual -user "${{ steps.vars.outputs.usuario }}" \
             -duration 7200 -output ../grabaciones -no-update-check
