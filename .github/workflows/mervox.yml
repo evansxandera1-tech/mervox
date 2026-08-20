@@ -31,6 +31,9 @@ jobs:
       - name: Clonar tiktok-live-recorder
         run: git clone https://github.com/Michele0303/tiktok-live-recorder.git recorder
 
+      - name: Instalar uv
+        run: pip install uv
+
       - name: Instalar dependencias del recorder
         run: pip install -r recorder/requirements.txt || true
 
