@@ -12,7 +12,7 @@ on:
 jobs:
   procesar:
     runs-on: ubuntu-latest
-    timeout-minutes: 340
+    timeout-minutes: 350
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -48,12 +48,12 @@ jobs:
             echo "usuario=${{ github.event.inputs.usuario_tiktok }}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Grabar live (max 2 horas)
+      - name: Grabar live (max 3h45min)
         run: |
           mkdir -p grabaciones
           cd recorder
           python src/main.py -mode manual -user "${{ steps.vars.outputs.usuario }}" \
-            -duration 7200 -output ../grabaciones -no-update-check
+            -duration 13500 -output ../grabaciones -no-update-check
 
       - name: Avisar por Telegram - grabacion terminada
         env:
