@@ -35,7 +35,9 @@ jobs:
         run: pip install uv
 
       - name: Instalar dependencias del recorder
-        run: pip install -r recorder/requirements.txt || true
+        run: |
+          pip install -r recorder/requirements.txt || true
+          pip install ffmpeg-python distro curl_cffi telethon
 
       - name: Definir usuario objetivo
         id: vars
